@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  s3fs:
+    build: .
+    privileged: true
+    volumes:
+      - ./volumes/aws-credentials:/root/.aws/credentials
+      - ./volumes/s3fs-authfile:/root/.s3fs
+    command:
+      - sleep
+      - infinity
+    env_file:
+      - .env
