@@ -49,6 +49,22 @@ Tool for syncing a Heroku Bucketeer bucket to a non-Bucketeer bucket.
   Running command aws s3 sync /mnt/ s3://example-bucket/
   …
   ```
+- Do the sync with [run.sh](./run.sh):
+  ```console
+  $ ./run.sh example-bucket
+  Thu Aug 24 11:02:18 CDT 2023
+
+  ==> Mounting S3 Filesystem
+  Running command aws s3 sync /mnt/ s3://example-bucket/ --no-progress
+  upload: …
+
+  Thu Aug 24 11:02:23 CDT 2023
+
+  Total time elapsed: 00:00:05 (HH:MM:SS)
+
+  $ ls logs/
+  sync-20230824110223.log
+  ```
 
 ## Resources
 
