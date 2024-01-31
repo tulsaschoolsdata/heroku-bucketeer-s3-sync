@@ -29,7 +29,9 @@ function seconds_format() {
 }
 
 function sync() {
-  docker compose run -i --rm s3fs aws s3 sync /mnt/ "s3://$BUCKET_PATH/" --no-progress
+  docker compose exec s3fs aws s3 sync /mnt/ \
+    "s3://$BUCKET_PATH/" \
+    --exclude "*/tables/teacher/tulsa_model/*"
 }
 
 function main() {
